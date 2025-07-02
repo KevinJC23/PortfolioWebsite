@@ -98,14 +98,6 @@ const ContactPage = () => {
                         </div>
 
                         <div className='flex items-center gap-4'>
-                            <FaPhone className='w-6 h-6 text-neutral-800 dark:text-neutral-300' />
-                            <div>
-                                <h3 className='font-semibold text-neutral-800 dark:text-neutral-200'>Phone</h3>
-                                <a className='text-neutral-600 dark:text-neutral-300'>+6281281878597</a>
-                            </div>
-                        </div>
-
-                        <div className='flex items-center gap-4'>
                             <FaMapMarkerAlt className='w-6 h-6 text-neutral-800 dark:text-neutral-300' />
                             <div>
                                 <h3 className='font-semibold text-neutral-800 dark:text-neutral-200'>Location</h3>
