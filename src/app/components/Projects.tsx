@@ -61,9 +61,12 @@ const ProjectCard = ({ project }: { project: any }) => {
         </div>
         <div className='flex gap-4 mt-2'>
           <ProjectLink href={ project.githubLink } icon={ <FaGithub className='w-4 h-4'/> } label="Code" />
-          {project.demoLink && project.demoLink.trim() !== '' && (
-            <ProjectLink href={ project.demoLink } icon={ <FaExternalLinkAlt className='w-4 h-4'/> } label="Live Demo" />
-          )}
+          <ProjectLink 
+            href={ project.demoLink && project.demoLink.trim() !== '' ? project.demoLink : null } 
+            icon={ <FaExternalLinkAlt className='w-4 h-4'/> } 
+            label="Live Demo" 
+            disabled={ !project.demoLink || project.demoLink.trim() === '' }
+          />
         </div>
       </Card>
     </>
@@ -174,15 +177,26 @@ const TechBadge = ({ tech }: { tech: string }) => {
 const ProjectLink = ({ 
   href, 
   icon, 
-  label 
+  label,
+  disabled = false
 }: { 
-  href: string; 
+  href: string | null; 
   icon: React.ReactNode; 
-  label: string; 
+  label: string;
+  disabled?: boolean;
 }) => {
+  if (disabled) {
+    return (
+      <span className='flex items-center gap-2 text-neutral-400 dark:text-neutral-500 cursor-not-allowed text-sm font-medium'>
+        { icon }
+        <span>{ label }</span>
+      </span>
+    );
+  }
+
   return (
     <Link 
-      href={ href } 
+      href={ href || '#' } 
       target='_blank' 
       className='flex items-center gap-2 text-neutral-600 dark:text-neutral-400 hover:text-black hover:dark:text-white transition-colors duration-200 text-sm font-medium'
     >

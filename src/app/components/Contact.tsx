@@ -75,7 +75,7 @@ const ContactPage = () => {
     return(
         <div id="contact" className='container max-w-7xl mx-auto py-20'>
             <motion.h1
-                className="text-3xl font-bold -mt-2 mb-12 text-center text-neutral-800 dark:text-neutral-200"
+                className="text-3xl font-bold -mt-1 mb-12 text-center text-neutral-800 dark:text-neutral-200"
                 initial={{ opacity: 0, y: -20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -86,7 +86,7 @@ const ContactPage = () => {
 
             <div className='mt-2 grid grid-cols-1 md:grid-cols-2 gap-12'>
                 <div className='space-y-8'>
-                    <h2 className='text-2xl font-semibold -mt-1 mb-4 text-neutral-800 dark:text-neutral-200'>Get in Touch</h2>
+                    <h2 className='text-2xl font-semibold mt-1.5 mb-4 text-neutral-800 dark:text-neutral-200'>Get in Touch</h2>
                     <p className='text-neutral-600 dark:text-neutral-300 md:w-2/3'>I'm excited to discussing new projects, creative ideas, or opportunities with you. Feel free to contact me</p>
                     <div className='space-y-4'>
                         <div className='flex items-center gap-4'>
