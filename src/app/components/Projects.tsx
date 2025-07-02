@@ -61,7 +61,9 @@ const ProjectCard = ({ project }: { project: any }) => {
         </div>
         <div className='flex gap-4 mt-2'>
           <ProjectLink href={ project.githubLink } icon={ <FaGithub className='w-4 h-4'/> } label="Code" />
-          <ProjectLink href={ project.demoLink || project.githubLink } icon={ <FaExternalLinkAlt className='w-4 h-4'/> } label="Live Demo" />
+          {project.demoLink && project.demoLink.trim() !== '' && (
+            <ProjectLink href={ project.demoLink } icon={ <FaExternalLinkAlt className='w-4 h-4'/> } label="Live Demo" />
+          )}
         </div>
       </Card>
     </>

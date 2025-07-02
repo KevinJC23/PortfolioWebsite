@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { ChatbotModal } from './ChatbotModal';
+import { ChatbotModal } from '../ChatbotModal/ChatbotModal';
 import styles from './FloatingChatButton.module.css';
 
 export function FloatingChatButton() {

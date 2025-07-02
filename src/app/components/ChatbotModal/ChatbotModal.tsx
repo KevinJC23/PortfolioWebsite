@@ -5,7 +5,7 @@ import { Assistant } from '@/lib/googleai';
 import { Chat } from '../Chat/Chat';
 import { Controls } from '../Controls/Controls';
 import { Loader } from '../Loader/Loader';
-import { Message } from '@/types/chat';
+import { usePersistedMessages } from '@/hooks/usePersistedMessages'; 
 import styles from './ChatbotModal.module.css';
 
 interface ChatbotModalProps {
@@ -14,7 +14,7 @@ interface ChatbotModalProps {
 
 export function ChatbotModal({ onClose }: ChatbotModalProps) {
   const assistantRef = useRef(new Assistant());
-  const [messages, setMessages] = useState<Message[]>([]);
+  const { messages, addMessage, setMessages } = usePersistedMessages(); // ← Fixed destructuring
   const [isLoading, setIsLoading] = useState(false);
   const [isStreaming, setIsStreaming] = useState(false);
 
@@ -52,9 +52,10 @@ export function ChatbotModal({ onClose }: ChatbotModalProps) {
       index === prevMessages.length - 1 ? { ...message, content: `${message.content}${content}` } : message));
   }
 
-  function addMessage(message: Message) {
-    setMessages((prevMessages) => [...prevMessages, message]);
-  }
+  // Remove this function since addMessage is now from the hook
+  // function addMessage(message: Message) {
+  //   setMessages((prevMessages) => [...prevMessages, message]);
+  // }
 
   async function handleContentSend(content: string) {
     addMessage({ content, role: "user" });

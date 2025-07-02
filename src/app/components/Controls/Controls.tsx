@@ -32,7 +32,7 @@ export function Controls({ isDisabled=false, onSend }: ControlsProps) {
 
     function handleEnterPress(event: React.KeyboardEvent<HTMLTextAreaElement>) {
         if(event.key === "Enter" && !event.shiftKey) {
-            event.preventDefault;
+            event.preventDefault();
             handleContentSend();
         }
     }
