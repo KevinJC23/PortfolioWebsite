@@ -1,0 +1,221 @@
+.Chat {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  scroll-behavior: smooth;
+}
+
+.Group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeInUp 0.3s ease-out;
+}
+
+.Message {
+  max-width: 85%;
+  padding: 12px 16px;
+  border-radius: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+  font-size: 14px;
+  position: relative;
+  animation: messageSlideIn 0.2s ease-out;
+}
+
+.Message[data-role="user"] {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+.Message[data-role="assistant"] {
+  align-self: flex-start;
+  background: white;
+  color: #333;
+  border: 1px solid #e9ecef;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.Message[data-role="system"] {
+  align-self: center;
+  background: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeaa7;
+  border-radius: 8px;
+  font-style: italic;
+  text-align: center;
+  max-width: 70%;
+}
+
+.Message p {
+  margin: 0 0 8px 0;
+}
+
+.Message p:last-child {
+  margin-bottom: 0;
+}
+
+.Message code {
+  background: rgba(0, 0, 0, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+  font-size: 13px;
+}
+
+.Message[data-role="user"] code {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.Message pre {
+  background: #f6f8fa;
+  padding: 12px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin: 8px 0;
+  border-left: 4px solid #0366d6;
+}
+
+.Message[data-role="user"] pre {
+  background: rgba(255, 255, 255, 0.1);
+  border-left-color: rgba(255, 255, 255, 0.3);
+}
+
+.Message pre code {
+  background: none;
+  padding: 0;
+}
+
+.Message ul, .Message ol {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.Message li {
+  margin: 4px 0;
+}
+
+.Message blockquote {
+  border-left: 4px solid #ddd;
+  margin: 8px 0;
+  padding-left: 12px;
+  color: #666;
+  font-style: italic;
+}
+
+.Message[data-role="user"] blockquote {
+  border-left-color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.Message strong {
+  font-weight: 600;
+}
+
+.Message em {
+  font-style: italic;
+}
+
+.Message h1, .Message h2, .Message h3, .Message h4, .Message h5, .Message h6 {
+  margin: 12px 0 8px 0;
+  font-weight: 600;
+}
+
+.Message h1 { font-size: 18px; }
+.Message h2 { font-size: 16px; }
+.Message h3 { font-size: 15px; }
+.Message h4 { font-size: 14px; }
+.Message h5 { font-size: 13px; }
+.Message h6 { font-size: 12px; }
+
+.Chat::-webkit-scrollbar {
+  width: 6px;
+}
+
+.Chat::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.Chat::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.Chat::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes messageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.Message[data-role="user"] {
+  animation-name: messageSlideInRight;
+}
+
+@keyframes messageSlideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .Chat {
+    padding: 16px;
+    gap: 20px;
+  }
+  
+  .Message {
+    max-width: 90%;
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  .Message pre {
+    padding: 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Chat {
+    padding: 12px;
+    gap: 16px;
+  }
+  
+  .Message {
+    max-width: 95%;
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}

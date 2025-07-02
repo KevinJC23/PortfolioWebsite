@@ -1,0 +1,51 @@
+.Controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.TextAreaContainer {
+  flex: 1;
+  background: #f5f5f5;
+  border-radius: 24px;
+  padding: 12px 20px;
+}
+
+.TextArea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-size: 14px;
+  color: #333;
+  resize: none;
+  min-height: 20px;
+}
+
+.TextArea::placeholder {
+  color: #999;
+}
+
+.Button {
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  background: #6366f1;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.Button:hover {
+  background: #5856eb;
+}
+
+.Button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

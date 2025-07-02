@@ -1,0 +1,226 @@
+.LoaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.Loader {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  position: relative;
+}
+
+.Loader::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border: 3px solid transparent;
+  border-top: 3px solid #764ba2;
+  border-radius: 50%;
+  animation: spin 1.5s linear infinite reverse;
+}
+
+.LoaderDots {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.LoaderDots::before,
+.LoaderDots::after,
+.LoaderDots {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #667eea;
+  animation: dotPulse 1.5s ease-in-out infinite;
+}
+
+.LoaderDots::before {
+  animation-delay: -0.3s;
+}
+
+.LoaderDots::after {
+  animation-delay: 0.3s;
+}
+
+.LoaderTyping {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: white;
+  border-radius: 16px;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e9ecef;
+  max-width: fit-content;
+}
+
+.LoaderTyping::before {
+  content: 'AI is typing';
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+}
+
+.LoaderTyping::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #667eea;
+  animation: typingDot 1.4s ease-in-out infinite;
+  margin-left: 4px;
+}
+
+.TypingDots {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.TypingDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #667eea;
+  animation: typingDot 1.4s ease-in-out infinite;
+}
+
+.TypingDot:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.TypingDot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.TypingDot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.LoaderPulse {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #667eea;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+  0% { 
+    transform: rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(360deg); 
+  }
+}
+
+@keyframes dotPulse {
+  0%, 80%, 100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes typingDot {
+  0%, 60%, 100% {
+    transform: translateY(0);
+    opacity: 0.4;
+  }
+  30% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.LoaderShimmer {
+  width: 200px;
+  height: 20px;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+  border-radius: 4px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .LoaderWrapper {
+    padding: 16px;
+  }
+  
+  .Loader {
+    width: 32px;
+    height: 32px;
+    border-width: 2px;
+  }
+  
+  .Loader::after {
+    border-width: 2px;
+  }
+  
+  .LoaderTyping {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .Loader {
+    border-color: #444;
+    border-top-color: #667eea;
+  }
+  
+  .LoaderTyping {
+    background: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+  }
+  
+  .LoaderShimmer {
+    background: linear-gradient(90deg, #2d3748 25%, #4a5568 50%, #2d3748 75%);
+    background-size: 200% 100%;
+  }
+}
