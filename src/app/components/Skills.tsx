@@ -25,7 +25,7 @@ const Skills = () => {
     { name: 'Collaboration', icon: 'mdi:account-group' },
     { name: 'Communication', icon: 'mdi:forum' },
     { name: 'Continuous Learning', icon: 'mdi:book-open-page-variant' },
-    { name: 'Creativity', icon: 'mdi:lightbulb-on' },
+    { name: 'Intellectually Curious', icon: 'mdi:lightbulb-on' },
     { name: 'Decision-Making', icon: 'mdi:scale-balance' },
     { name: 'Problem-Solving', icon: 'mdi:puzzle' }
   ];
