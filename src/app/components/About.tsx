@@ -61,7 +61,7 @@ const About = () => {
         <div className='mt-16 container max-w-7xl mx-auto py-8 sm:py-12 lg:py-16'>
           <section className='mb-20'>
             <motion.h1
-              className="text-2xl sm:text-3xl font-bold mt-4 mb-8 sm:mb-12 text-center justify-center"
+              className="text-3xl font-bold mt-4 mb-8 sm:mb-12 text-center justify-center"
               initial={{ opacity: 0, y: -20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
