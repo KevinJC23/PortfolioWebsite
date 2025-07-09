@@ -101,23 +101,25 @@ const Skills = () => {
             Tech Stack
           </motion.h2>
 
-          <TechCategory 
-            title="Programming Languages" 
-            technologies={ progLangs } 
-            delay={ 0.1 }
-          />
-          
-          <TechCategory 
-            title="Frameworks & Libraries" 
-            technologies={ frameWorks } 
-            delay={ 0.2 }
-          />
-          
-          <TechCategory 
-            title="Tools & Technologies" 
-            technologies={ toolsData } 
-            delay={ 0.3 }
-          />
+          <div className="text-center">
+            <TechCategory 
+              title="Programming Languages" 
+              technologies={ progLangs } 
+              delay={ 0.1 }
+            />
+            
+            <TechCategory 
+              title="Frameworks & Libraries" 
+              technologies={ frameWorks } 
+              delay={ 0.2 }
+            />
+            
+            <TechCategory 
+              title="Tools & Technologies" 
+              technologies={ toolsData } 
+              delay={ 0.3 }
+            />
+          </div>
         </motion.div>
 
         <motion.div
