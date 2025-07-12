@@ -21,4 +21,9 @@ export const certificates: Certificate[] = [
         issuer: 'Jabar Istimewa Digital Academy',
         image: '/certificates/Front-End Web Developer.png',
     },
+    {
+        title: 'Linear Algebra for Machine Learning and Data Science',
+        issuer: 'DeepLearning.AI',
+        image: '/certificates/Linear Algebra for Machine Learning and Data Science.png',
+    },
 ]
