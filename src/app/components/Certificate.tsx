@@ -45,7 +45,7 @@ const Certificate = () => {
   };
 
   return (
-    <div id="about" className='min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8'>
+    <div id="certificates" className='min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8'>
       <section id="certificates" className="py-20 container max-w-7xl mx-auto px-4">
         <motion.h1
           className="text-3xl font-bold text-center mb-8"
@@ -72,27 +72,26 @@ const Certificate = () => {
               <motion.div
                 className="absolute left-0 md:left-16 hidden md:block"
                 style={{ zIndex: 5 }}
-                variants={ previewVariants}
+                variants={previewVariants}
                 animate="visible"
                 whileHover={{ scale: 0.8, opacity: 0.6 }}
               >
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden w-40 h-28">
+                <div className="bg-white dark:bg-gray-800 shadow-lg overflow-hidden w-40 h-28">
                   <img
-                    src={ certificates[getPrevIndex()].image }
+                    src={certificates[getPrevIndex()].image}
                     alt="Previous"
                     className="w-full h-full object-cover"
                   />
                 </div>
               </motion.div>
 
-              {/* Main Image */}
               <div className="relative w-[28rem] md:w-[36rem]">
-                <div className="relative w-full pt-[68%]"> 
-                  <AnimatePresence mode="wait" custom={ direction }>
+                <div className="relative w-full"> 
+                  <AnimatePresence mode="wait" custom={direction}>
                     <motion.div
-                      key={ currentIndex }
-                      custom={ direction }
-                      variants={ slideVariants }
+                      key={currentIndex}
+                      custom={direction}
+                      variants={slideVariants}
                       initial="enter"
                       animate="center"
                       exit="exit"
@@ -101,15 +100,14 @@ const Certificate = () => {
                         opacity: { duration: 0.2 },
                         scale: { duration: 0.2 },
                       }}
-                      className="absolute inset-0"
+                      className="relative"
                     >
-                      <div className="bg-white dark:bg-gray-800 overflow-hidden flex items-center justify-center">
+                      <div className="rounded-lg overflow-hidden p-4">
                         <img
-                          src={ certificates[currentIndex].image }
-                          alt={ certificates[currentIndex].title }
-                          className="w-full h-full object-contain"
+                          src={certificates[currentIndex].image}
+                          alt={certificates[currentIndex].title}
+                          className="w-full h-auto object-contain max-h-[70vh]" 
                         />
-                        <div className="absolute inset-0 via-transparent to-transparent" />
                       </div>
                     </motion.div>
                   </AnimatePresence>
@@ -119,13 +117,13 @@ const Certificate = () => {
               <motion.div
                 className="absolute right-0 md:right-16 hidden md:block"
                 style={{ zIndex: 5 }}
-                variants={ previewVariants }
+                variants={previewVariants}
                 animate="visible"
                 whileHover={{ scale: 0.8, opacity: 0.6 }}
               >
-                <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden w-40 h-28">
+                <div className="bg-white dark:bg-gray-800 shadow-lg overflow-hidden w-40 h-28">
                   <img
-                    src={ certificates[getNextIndex()].image }
+                    src={certificates[getNextIndex()].image}
                     alt="Next"
                     className="w-full h-full object-cover"
                   />
@@ -135,7 +133,7 @@ const Certificate = () => {
           </div>
 
           <motion.button
-            onClick={ () => navigate(1) }
+            onClick={() => navigate(1)}
             className="absolute right-4 md:right-8 z-30 text-black dark:text-white p-3 md:p-4"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -147,17 +145,17 @@ const Certificate = () => {
         <div className="text-center mt-4">
           <AnimatePresence mode="wait">
             <motion.div
-              key={ currentIndex }
+              key={currentIndex}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
               <h3 className="mt-10 text-xl md:text-2xl font-bold text-gray-800 dark:text-white mb-2">
-                { certificates[currentIndex]?.title }
+                {certificates[currentIndex]?.title}
               </h3>
               <p className="text-sm md:text-base text-gray-600 dark:text-gray-400">
-                Issued by { certificates[currentIndex]?.issuer }
+                Issued by {certificates[currentIndex]?.issuer}
               </p>
             </motion.div>
           </AnimatePresence>
