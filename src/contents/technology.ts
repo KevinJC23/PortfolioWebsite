@@ -108,7 +108,7 @@ export const technologies: Technology[] = [
     },
     { 
         name: 'Firebase', 
-        icon: 'logos:firebase',
+        icon: 'logos:firebase-icon',
         category: 'tool', 
     },
     { 
