@@ -56,7 +56,7 @@ const Hero = () => {
               transition={{delay: 1.0}}
               className="flex flex-row sm:flex-row justify-center items-center gap-3 sm:gap-4"
             >
-                <Link href="https://drive.google.com/file/d/1b8Vr-N6eVgRYD29VqZqoBI55-sF2CTc5/view?usp=drive_link" passHref>
+                <Link href="https://drive.google.com/file/d/17oSedu9tRVw96D4bXi9jSZIi_JIgCsvI/view?usp=drive_link" passHref>
                     <HoverBorderGradient
                         containerClassName="rounded-full w-fit"
                         as="button"
