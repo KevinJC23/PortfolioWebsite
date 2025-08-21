@@ -32,7 +32,7 @@
   height: 40px;
   border: none;
   border-radius: 20px;
-  background: #6366f1;
+  background: linear-gradient(to right, #ec4899, #a855f7, #3b82f6);
   color: white;
   cursor: pointer;
   display: flex;
@@ -42,7 +42,7 @@
 }
 
 .Button:hover {
-  background: #5856eb;
+  opacity: 0.9;
 }
 
 .Button:disabled {
