@@ -23,7 +23,7 @@ export const projects: Project[] = [
         technologies: ['Python', 'OpenCV', 'Gradio'],
         githubLink: 'https://github.com/KevinJC23/ImagePreprocessingAndRecognition',
         demoLink: 'https://huggingface.co/spaces/KevinJuanCarlos23/ImageProcessingAndRecognition',
-        image: '',
+        image: '/projects/image-preprocessing-and-recognition.jpg',
     },
     {
         title: 'Vehicle Image Classification',
