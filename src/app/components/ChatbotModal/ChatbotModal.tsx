@@ -14,7 +14,7 @@ interface ChatbotModalProps {
 
 export function ChatbotModal({ onClose }: ChatbotModalProps) {
   const assistantRef = useRef(new Assistant());
-  const { messages, addMessage, setMessages } = usePersistedMessages(); // ← Fixed destructuring
+  const { messages, addMessage, setMessages } = usePersistedMessages(); 
   const [isLoading, setIsLoading] = useState(false);
   const [isStreaming, setIsStreaming] = useState(false);
 
@@ -51,12 +51,7 @@ export function ChatbotModal({ onClose }: ChatbotModalProps) {
     setMessages((prevMessages) => prevMessages.map((message, index) => 
       index === prevMessages.length - 1 ? { ...message, content: `${message.content}${content}` } : message));
   }
-
-  // Remove this function since addMessage is now from the hook
-  // function addMessage(message: Message) {
-  //   setMessages((prevMessages) => [...prevMessages, message]);
-  // }
-
+  
   async function handleContentSend(content: string) {
     addMessage({ content, role: "user" });
     setIsLoading(true);
