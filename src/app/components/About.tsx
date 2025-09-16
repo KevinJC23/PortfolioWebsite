@@ -78,8 +78,8 @@ const About = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
-                Hello everyone, my name is Kevin Juan Carlos as a Computer Science student passionate about Artificial Intelligence, Mathematics, Website 
-                Development, and currently exploring Cloud Computing. Besides that, I have a strong interest in developing various projects and have worked 
+                Hello everyone, my name is Kevin Juan Carlos as an Informatics student passionate about Artificial Intelligence, Software 
+                Development, and Cloud Computing. Besides that, I have a strong interest in developing various projects and have worked 
                 on several projects related to Artificial Intelligence such as Predictive Analytics, System Recommendation, Integrating LLMs API to Website 
                 & Mobile applications, and others, which give me a strong foundation to build another projects. Previously, I had the opportunity to handle 
                 client projects from Qatar to craft Object Detection to identify defective and non-defective manufacturing items.
